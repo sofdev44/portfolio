@@ -84,7 +84,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    height:72px;
+    height:84px;
   }
   .brand{
     font-family:'Sora', sans-serif;
@@ -180,14 +180,14 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    padding:110px 0 90px;
+    padding:150px 0 130px;
     position:relative;
     overflow:hidden;
   }
   .hero-grid{
     display:grid;
     grid-template-columns:1fr;
-    gap:56px;
+    gap:76px;
     align-items:center;
   }
   @media(min-width:900px){
@@ -199,7 +199,7 @@
     border-radius:50%;
     object-fit:cover;
     border:3px solid var(--amber);
-    margin-bottom:28px;
+    margin-bottom:36px;
     display:block;
     box-shadow:0 0 0 6px rgba(227,168,87,0.08);
   }
@@ -210,7 +210,7 @@
     letter-spacing:0.14em;
     color:var(--amber);
     text-transform:uppercase;
-    margin-bottom:20px;
+    margin-bottom:26px;
     display:flex;
     align-items:center;
     gap:10px;
@@ -224,11 +224,11 @@
   h1{
     font-family:'Sora', sans-serif;
     font-weight:700;
-    font-size:clamp(40px, 6vw, 64px);
-    line-height:1.04;
+    font-size:clamp(44px, 6.5vw, 72px);
+    line-height:1.08;
     letter-spacing:-0.01em;
     color:var(--paper);
-    margin-bottom:22px;
+    margin-bottom:28px;
   }
   h1 em{
     font-style:normal;
@@ -236,23 +236,24 @@
   }
 
   .hero-sub{
-    font-size:17px;
+    font-size:18px;
+    line-height:1.75;
     color:var(--paper-dim);
-    max-width:480px;
-    margin-bottom:32px;
+    max-width:500px;
+    margin-bottom:38px;
   }
 
   .cta-row{
     display:flex;
     flex-wrap:wrap;
-    gap:14px;
-    margin-bottom:40px;
+    gap:16px;
+    margin-bottom:46px;
   }
   .btn{
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
     letter-spacing:0.03em;
-    padding:13px 22px;
+    padding:15px 25px;
     border-radius:4px;
     display:inline-flex;
     align-items:center;
@@ -272,16 +273,16 @@
   @media(min-width:700px){ .stats-strip{grid-template-columns:repeat(4, 1fr);} }
   .stat{
     background:var(--navy-panel);
-    padding:28px 20px;
+    padding:36px 22px;
     text-align:center;
   }
   .stat-num{
     font-family:'Sora', sans-serif;
     font-weight:800;
-    font-size:36px;
+    font-size:40px;
     color:var(--amber);
     line-height:1;
-    margin-bottom:10px;
+    margin-bottom:12px;
   }
   .stat-unit{font-size:18px; font-weight:600;}
   .stat-label{
@@ -352,16 +353,16 @@
   }
 
   /* ---------- SECTIONS ---------- */
-  section{padding:80px 0;}
+  section{padding:112px 0;}
   .section-head{
     display:flex;
     align-items:baseline;
     justify-content:space-between;
     flex-wrap:wrap;
     gap:12px;
-    margin-bottom:44px;
+    margin-bottom:60px;
     border-bottom:1px solid var(--line);
-    padding-bottom:22px;
+    padding-bottom:28px;
   }
   .tag{
     font-family:'IBM Plex Mono', monospace;
@@ -373,7 +374,7 @@
   .section-title{
     font-family:'Sora', sans-serif;
     font-weight:600;
-    font-size:30px;
+    font-size:34px;
     color:var(--paper);
   }
 
@@ -388,29 +389,30 @@
   .about-grid{
     display:grid;
     grid-template-columns:1fr;
-    gap:40px;
+    gap:56px;
   }
   @media(min-width:820px){
     .about-grid{grid-template-columns:1.3fr 1fr;}
   }
   .about-text p{
     color:var(--paper-dim);
-    font-size:16px;
-    margin-bottom:18px;
-    max-width:560px;
+    font-size:16.5px;
+    line-height:1.8;
+    margin-bottom:22px;
+    max-width:580px;
   }
   .about-text strong{color:var(--paper); font-weight:600;}
 
   .facts{
     border:1px solid var(--line);
     border-radius:6px;
-    padding:22px 24px;
+    padding:30px 30px;
     background:var(--navy-panel);
   }
   .fact{
     display:flex;
     justify-content:space-between;
-    padding:11px 0;
+    padding:14px 0;
     border-bottom:1px solid var(--line);
     font-size:14px;
   }
@@ -421,16 +423,16 @@
   /* ---------- PROJECTS ---------- */
   .projects{
     display:grid;
-    gap:20px;
+    gap:26px;
   }
   .pcard{
     border:1px solid var(--line);
     border-radius:8px;
     background:var(--navy-panel);
-    padding:30px;
+    padding:38px;
     display:grid;
     grid-template-columns:1fr;
-    gap:18px;
+    gap:22px;
     position:relative;
     transition:border-color .2s ease, transform .2s ease;
   }
@@ -466,12 +468,12 @@
 
   .pcard h3{
     font-family:'Sora', sans-serif;
-    font-size:20px;
+    font-size:22px;
     font-weight:600;
     color:var(--paper);
-    margin-bottom:10px;
+    margin-bottom:13px;
   }
-  .pcard p{color:var(--paper-dim); font-size:14.5px; margin-bottom:14px;}
+  .pcard p{color:var(--paper-dim); font-size:15px; line-height:1.7; margin-bottom:18px;}
   .stack{
     display:flex; flex-wrap:wrap; gap:8px;
     margin-bottom:10px;
@@ -490,8 +492,8 @@
   .xp-item{
     display:grid;
     grid-template-columns:1fr;
-    gap:6px;
-    padding:26px 0;
+    gap:8px;
+    padding:34px 0;
     border-bottom:1px solid var(--line);
   }
   .xp-item:first-child{padding-top:0;}
@@ -509,21 +511,21 @@
   .skills-grid{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
-    gap:28px;
+    gap:38px;
   }
   @media(min-width:760px){ .skills-grid{grid-template-columns:repeat(4, 1fr);} }
   .skill-group .tag{margin-bottom:14px; display:block;}
   .skill-group ul{list-style:none;}
   .skill-group li{
     color:var(--paper-dim);
-    font-size:14px;
-    padding:6px 0;
+    font-size:14.5px;
+    padding:9px 0;
     border-bottom:1px dashed var(--line);
   }
 
   /* ---------- FOOTER / CONTACT ---------- */
   footer{
-    padding:90px 0 50px;
+    padding:130px 0 60px;
     border-top:1px solid var(--line);
     margin-top:20px;
   }
@@ -531,16 +533,16 @@
     background:var(--navy-panel);
     border:1px solid var(--line);
     border-radius:10px;
-    padding:52px 40px;
+    padding:68px 48px;
     text-align:center;
   }
   .contact-panel h2{
     font-family:'Sora', sans-serif;
-    font-size:clamp(26px,4vw,38px);
+    font-size:clamp(28px,4.4vw,44px);
     font-weight:600;
-    margin-bottom:14px;
+    margin-bottom:18px;
   }
-  .contact-panel p{color:var(--paper-dim); max-width:480px; margin:0 auto 30px;}
+  .contact-panel p{color:var(--paper-dim); font-size:16px; max-width:500px; margin:0 auto 36px;}
   .contact-links{
     display:flex; justify-content:center; flex-wrap:wrap; gap:14px;
   }
@@ -628,7 +630,7 @@
   </div>
 </section>
 
-<section style="padding:0 0 60px;">
+<section style="padding:0 0 80px;">
   <div class="wrap">
     <div class="stats-strip fade-up">
       <div class="stat">
