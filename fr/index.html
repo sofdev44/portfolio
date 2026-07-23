@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofiane Shahin — Ingénieur Systèmes Embarqués &amp; Robotique</title>
+<meta name="description" content="Étudiant ingénieur à l'EFREI Paris, spécialisé en systèmes embarqués et robotique. Conception de systèmes autonomes qui perçoivent, décident et agissent.">
+
+<!-- Open Graph / LinkedIn / Facebook preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sofdev44.github.io/portfolio/fr/">
+<meta property="og:title" content="Sofiane Shahin — Systèmes Embarqués & Robotique">
+<meta property="og:description" content="Étudiant ingénieur à l'EFREI Paris, spécialisé en systèmes embarqués et robotique. Conception de systèmes autonomes qui perçoivent, décident et agissent.">
+<meta property="og:image" content="https://sofdev44.github.io/portfolio/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sofiane Shahin — Systèmes Embarqués & Robotique">
+<meta name="twitter:description" content="Étudiant ingénieur à l'EFREI Paris, spécialisé en systèmes embarqués et robotique. Conception de systèmes autonomes qui perçoivent, décident et agissent.">
+<meta name="twitter:image" content="https://sofdev44.github.io/portfolio/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0B1929;
+    --navy-panel:#122A42;
+    --navy-panel-light:#17324E;
+    --amber:#E3A857;
+    --amber-dim:#8A6A3A;
+    --paper:#EDEBE2;
+    --paper-dim:#B9BDC4;
+    --steel:#5C7086;
+    --line:rgba(227,168,87,0.18);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--navy-deep);
+    color:var(--paper);
+    font-family:'Manrope', sans-serif;
+    line-height:1.6;
+    background-image:
+      radial-gradient(ellipse 900px 500px at 15% 0%, rgba(227,168,87,0.08), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 20%, rgba(23,50,78,0.9), transparent 55%);
+    background-repeat:no-repeat;
+    overflow-x:hidden;
+  }
+
+  ::selection{background:var(--amber); color:var(--navy-deep);}
+
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  a{color:var(--amber); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(11,25,41,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:72px;
+  }
+  .brand{
+    font-family:'Sora', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.06em;
+    color:var(--paper);
+  }
+  .navlinks{
+    display:flex;
+    gap:32px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.04em;
+  }
+  .navlinks a{color:var(--paper-dim);}
+  .navlinks a:hover{color:var(--amber); text-decoration:none;}
+  .navlinks{display:none;}
+  @media(min-width:760px){ .navlinks{display:flex;} }
+
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:2px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    font-weight:500;
+    background:var(--navy-panel);
+    border:1px solid var(--line);
+    border-radius:100px;
+    padding:4px;
+  }
+  .lang-switch span, .lang-switch a{
+    padding:5px 11px;
+    border-radius:100px;
+    text-decoration:none;
+  }
+  .lang-switch .lang-active{
+    background:var(--amber);
+    color:var(--navy-deep);
+    font-weight:700;
+  }
+  .lang-switch a{
+    color:var(--paper-dim);
+  }
+  .lang-switch a:hover{
+    color:var(--amber);
+    text-decoration:none;
+  }
+  @media(max-width:460px){
+    .lang-switch{font-size:10.5px;}
+  }
+
+  .status-pill{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    font-weight:500;
+    color:var(--paper);
+    background:rgba(111,203,127,0.08);
+    border:1px solid rgba(111,203,127,0.35);
+    padding:9px 16px;
+    border-radius:100px;
+    box-shadow:0 0 0 0 rgba(111,203,127,0.4);
+  }
+  .status-pill{white-space:nowrap;}
+  @media(max-width:640px){
+    .status-pill{font-size:10.5px; padding:7px 12px;}
+  }
+  @media(max-width:460px){
+    .status-pill span:not(.dot){ display:none; }
+    .status-pill{ gap:0; padding:9px; }
+  }
+  .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:#6FCB7F;
+    box-shadow:0 0 0 3px rgba(111,203,127,0.18);
+    flex-shrink:0;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 3px rgba(111,203,127,0.18); }
+    50%{ box-shadow:0 0 0 6px rgba(111,203,127,0.1); }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:110px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media(min-width:900px){
+    .hero-grid{grid-template-columns:1.05fr 0.95fr;}
+  }
+
+  .hero-photo{
+    width:140px; height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--amber);
+    margin-bottom:28px;
+    display:block;
+    box-shadow:0 0 0 6px rgba(227,168,87,0.08);
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    color:var(--amber);
+    text-transform:uppercase;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:24px; height:1px;
+    background:var(--amber);
+  }
+
+  h1{
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:clamp(40px, 6vw, 64px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    color:var(--paper);
+    margin-bottom:22px;
+  }
+  h1 em{
+    font-style:normal;
+    color:var(--amber);
+  }
+
+  .hero-sub{
+    font-size:17px;
+    color:var(--paper-dim);
+    max-width:480px;
+    margin-bottom:32px;
+  }
+
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:40px;
+  }
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.03em;
+    padding:13px 22px;
+    border-radius:4px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:all .15s ease;
+    text-decoration:none;
+  }
+  .stats-strip{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  @media(min-width:700px){ .stats-strip{grid-template-columns:repeat(4, 1fr);} }
+  .stat{
+    background:var(--navy-panel);
+    padding:28px 20px;
+    text-align:center;
+  }
+  .stat-num{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size:36px;
+    color:var(--amber);
+    line-height:1;
+    margin-bottom:10px;
+  }
+  .stat-unit{font-size:18px; font-weight:600;}
+  .stat-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--paper-dim);
+    letter-spacing:0.02em;
+  }
+
+  .btn-primary{
+    background:var(--amber);
+    color:var(--navy-deep);
+    font-weight:600;
+    box-shadow:0 4px 24px rgba(227,168,87,0.25);
+    transform:translateY(0);
+  }
+  .btn-primary:hover{
+    background:#F0BC77;
+    text-decoration:none;
+    transform:translateY(-2px);
+    box-shadow:0 8px 28px rgba(227,168,87,0.35);
+  }
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--paper);
+  }
+  .btn-ghost:hover{border-color:var(--amber); color:var(--amber); text-decoration:none;}
+
+  .log-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--paper-dim);
+    display:flex;
+    gap:10px;
+  }
+  .log-line span:first-child{color:var(--amber);}
+
+  /* ---------- HERO SVG ---------- */
+  .rig{
+    position:relative;
+  }
+  .rig svg{width:100%; height:auto; display:block;}
+  .draw{
+    stroke-dasharray:1400;
+    stroke-dashoffset:1400;
+    animation:draw 2.4s ease forwards;
+  }
+  .draw2{
+    stroke-dasharray:900;
+    stroke-dashoffset:900;
+    animation:draw 2.4s ease forwards;
+    animation-delay:.4s;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  .callout{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    fill:var(--paper-dim);
+    opacity:0;
+    animation:fadeIn .8s ease forwards;
+    animation-delay:2s;
+  }
+  @keyframes fadeIn{ to{opacity:1;} }
+
+  @media (prefers-reduced-motion: reduce){
+    .draw, .draw2, .callout{ animation:none; stroke-dashoffset:0; opacity:1; }
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:80px 0;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:44px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:22px;
+  }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    color:var(--amber);
+    text-transform:uppercase;
+  }
+  .section-title{
+    font-family:'Sora', sans-serif;
+    font-weight:600;
+    font-size:30px;
+    color:var(--paper);
+  }
+
+  .fade-up{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .fade-up.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  @media(min-width:820px){
+    .about-grid{grid-template-columns:1.3fr 1fr;}
+  }
+  .about-text p{
+    color:var(--paper-dim);
+    font-size:16px;
+    margin-bottom:18px;
+    max-width:560px;
+  }
+  .about-text strong{color:var(--paper); font-weight:600;}
+
+  .facts{
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px 24px;
+    background:var(--navy-panel);
+  }
+  .fact{
+    display:flex;
+    justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+  }
+  .fact:last-child{border-bottom:none;}
+  .fact-label{color:var(--paper-dim); font-family:'IBM Plex Mono', monospace; font-size:12px;}
+  .fact-val{color:var(--paper); text-align:right;}
+
+  /* ---------- PROJECTS ---------- */
+  .projects{
+    display:grid;
+    gap:20px;
+  }
+  .pcard{
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:var(--navy-panel);
+    padding:30px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+    position:relative;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .pcard:hover{border-color:var(--amber-dim); transform:translateY(-2px);}
+  @media(min-width:760px){
+    .pcard{grid-template-columns:64px 160px 1fr;}
+  }
+  .pcard-icon{
+    width:52px; height:52px;
+    border-radius:10px;
+    background:rgba(227,168,87,0.1);
+    border:1px solid var(--amber-dim);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+    color:var(--amber);
+  }
+  .pcard-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--paper-dim);
+  }
+  .pcard-status{
+    display:inline-block;
+    margin-top:10px;
+    padding:4px 10px;
+    border-radius:100px;
+    font-size:10.5px;
+    letter-spacing:0.05em;
+  }
+  .status-active{background:rgba(111,203,127,0.12); color:#6FCB7F; border:1px solid rgba(111,203,127,0.3);}
+  .status-progress{background:rgba(227,168,87,0.12); color:var(--amber); border:1px solid var(--amber-dim);}
+  .status-done{background:rgba(185,189,196,0.1); color:var(--paper-dim); border:1px solid var(--line);}
+
+  .pcard h3{
+    font-family:'Sora', sans-serif;
+    font-size:20px;
+    font-weight:600;
+    color:var(--paper);
+    margin-bottom:10px;
+  }
+  .pcard p{color:var(--paper-dim); font-size:14.5px; margin-bottom:14px;}
+  .stack{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-bottom:10px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--paper-dim);
+    border:1px solid var(--line);
+    padding:4px 9px;
+    border-radius:4px;
+  }
+  .pcard-link{font-family:'IBM Plex Mono', monospace; font-size:12.5px;}
+
+  /* ---------- EXPERIENCE ---------- */
+  .xp-item{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .xp-item:first-child{padding-top:0;}
+  .xp-item:last-child{border-bottom:none;}
+  @media(min-width:760px){
+    .xp-item{grid-template-columns:200px 1fr;}
+  }
+  .xp-date{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--amber);}
+  .xp-role{font-family:'Sora', sans-serif; font-size:18px; font-weight:600; color:var(--paper); margin-bottom:4px;}
+  .xp-org{color:var(--paper-dim); font-size:14px; margin-bottom:12px;}
+  .xp-item ul{padding-left:18px; color:var(--paper-dim); font-size:14.5px;}
+  .xp-item li{margin-bottom:6px;}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px;
+  }
+  @media(min-width:760px){ .skills-grid{grid-template-columns:repeat(4, 1fr);} }
+  .skill-group .tag{margin-bottom:14px; display:block;}
+  .skill-group ul{list-style:none;}
+  .skill-group li{
+    color:var(--paper-dim);
+    font-size:14px;
+    padding:6px 0;
+    border-bottom:1px dashed var(--line);
+  }
+
+  /* ---------- FOOTER / CONTACT ---------- */
+  footer{
+    padding:90px 0 50px;
+    border-top:1px solid var(--line);
+    margin-top:20px;
+  }
+  .contact-panel{
+    background:var(--navy-panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:52px 40px;
+    text-align:center;
+  }
+  .contact-panel h2{
+    font-family:'Sora', sans-serif;
+    font-size:clamp(26px,4vw,38px);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .contact-panel p{color:var(--paper-dim); max-width:480px; margin:0 auto 30px;}
+  .contact-links{
+    display:flex; justify-content:center; flex-wrap:wrap; gap:14px;
+  }
+  .foot-bottom{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:14px;
+    margin-top:50px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--paper-dim);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">SOFIANE SHAHIN</div>
+    <div class="navlinks">
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#experience">Expérience</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
+      <a href="../cv-sofiane-shahin.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <a href="../">EN</a>
+        <span class="lang-active">FR</span>
+      </div>
+      <div class="status-pill"><span class="dot"></span><span>Ouvert aux stages — Nov. 2026</span></div>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <img class="hero-photo" src="../photo.jpg" alt="Sofiane Shahin">
+      <div class="eyebrow">Systèmes Embarqués &amp; Robotique</div>
+      <h1>Concevoir des systèmes<br>qui <em>perçoivent,<br>décident, agissent.</em></h1>
+      <p class="hero-sub">Étudiant ingénieur à l'EFREI Paris, spécialisé en systèmes embarqués et robotique — formé à la rigueur opérationnelle en centrale nucléaire, je conçois aujourd'hui des systèmes autonomes capables de percevoir, décider et agir par eux-mêmes.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
+        <a href="../cv-sofiane-shahin.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Télécharger mon CV ↓</a>
+        <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      </div>
+      <div class="log-line"><span>LOG</span> En cours : drone autonome d'inspection visuelle pour aéronefs légers.</div>
+    </div>
+
+    <div class="rig">
+      <svg viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- quadcopter arms -->
+        <g class="draw" stroke="#E3A857" stroke-width="2" stroke-linecap="round">
+          <line x1="230" y1="200" x2="90" y2="80"/>
+          <line x1="230" y1="200" x2="370" y2="80"/>
+          <line x1="230" y1="200" x2="90" y2="320"/>
+          <line x1="230" y1="200" x2="370" y2="320"/>
+        </g>
+        <!-- center body -->
+        <g class="draw2" stroke="#EDEBE2" stroke-width="2">
+          <rect x="196" y="160" width="68" height="80" rx="8"/>
+          <circle cx="230" cy="188" r="7" stroke="#E3A857"/>
+        </g>
+        <!-- motors -->
+        <g class="draw2" stroke="#EDEBE2" stroke-width="1.6">
+          <circle cx="90" cy="80" r="20"/>
+          <circle cx="370" cy="80" r="20"/>
+          <circle cx="90" cy="320" r="20"/>
+          <circle cx="370" cy="320" r="20"/>
+        </g>
+        <!-- dimension lines -->
+        <g class="draw2" stroke="#8AA0B5" stroke-width="1">
+          <line x1="90" y1="60" x2="370" y2="60"/>
+          <line x1="90" y1="55" x2="90" y2="65"/>
+          <line x1="370" y1="55" x2="370" y2="65"/>
+        </g>
+        <text x="185" y="46" class="callout">450mm WHEELBASE</text>
+        <text x="30" y="200" class="callout">30.5×30.5</text>
+        <text x="30" y="214" class="callout">FC MOUNT</text>
+        <text x="300" y="360" class="callout">REV. 01 — CATIA</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 60px;">
+  <div class="wrap">
+    <div class="stats-strip fade-up">
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Stage en centrale<br>nucléaire</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Robots complets<br>réalisés</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">450<span class="stat-unit">mm</span></div>
+        <div class="stat-label">Châssis de drone,<br>conçu par moi-même</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">C1</div>
+        <div class="stat-label">Anglais courant<br>(TOEIC 860)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid fade-up">
+    <div class="about-text">
+      <div class="section-head" style="border:none; padding:0; margin-bottom:24px;">
+        <div>
+          <div class="tag">Profil</div>
+        </div>
+      </div>
+      <p>Je suis étudiant en cycle ingénieur à l'<strong>EFREI Paris</strong>, actuellement spécialisé en <strong>systèmes embarqués et robotique</strong>, de retour d'un semestre d'échange à l'<strong>Université Concordia</strong> à Montréal.</p>
+      <p>Mon parcours a débuté dans l'aérospatial : deux ans à <strong>IPSA Paris</strong> m'ont donné des bases solides en mécanique, structures et thermodynamique. Un stage technique chez <strong>EDF</strong>, au cœur du processus de validation sûreté d'une centrale nucléaire, m'a appris ce à quoi ressemble réellement la rigueur opérationnelle — c'est l'exigence que j'applique désormais à chaque système que je conçois.</p>
+      <p>Je prépare actuellement mon brevet de pilote privé (PPL, Cessna 172), qui alimente directement mon projet en cours : un drone autonome conçu pour l'inspection visuelle d'aéronefs légers.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="fact-label">LOCALISATION</span><span class="fact-val">Paris, France</span></div>
+      <div class="fact"><span class="fact-label">ÉCOLE</span><span class="fact-val">EFREI Paris</span></div>
+      <div class="fact"><span class="fact-label">FILIÈRE</span><span class="fact-val">Systèmes Embarqués</span></div>
+      <div class="fact"><span class="fact-label">ÉCHANGE</span><span class="fact-val">Concordia, Montréal</span></div>
+      <div class="fact"><span class="fact-label">RECHERCHE</span><span class="fact-val">Stage de 5 mois</span></div>
+      <div class="fact"><span class="fact-label">DÉBUT</span><span class="fact-val">Nov. 2026</span></div>
+      <div class="fact"><span class="fact-label">LANGUES</span><span class="fact-val">FR · EN (C1) · ES</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div>
+        <div class="tag">Projets</div>
+        <h2 class="section-title">Systèmes que j'ai conçus</h2>
+      </div>
+    </div>
+
+    <div class="projects">
+      <div class="pcard fade-up">
+        <div class="pcard-icon">✈</div>
+        <div class="pcard-meta">
+          2026 — PROJET PERSONNEL
+          <div class="pcard-status status-progress">EN COURS</div>
+        </div>
+        <div>
+          <h3>Drone autonome d'inspection d'aéronefs</h3>
+          <p>Quadricoptère sur mesure, châssis conçu et vérifié en résistance sous CATIA, conçu pour effectuer des passages d'inspection visuelle structurés sur un Cessna 172 — détectant les anomalies de surface visibles par vision par ordinateur. Combine conception mécanique, dimensionnement de la propulsion, contrôle de vol et pipeline de vision dans un seul système.</p>
+          <div class="stack">
+            <span class="chip">CATIA</span>
+            <span class="chip">ArduPilot</span>
+            <span class="chip">Gazebo / SITL</span>
+            <span class="chip">Python</span>
+            <span class="chip">OpenCV</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard fade-up">
+        <div class="pcard-icon">◎</div>
+        <div class="pcard-meta">
+          Juin–Juil. 2026 — EFREI PARIS
+          <div class="pcard-status status-active">LIVRÉ</div>
+        </div>
+        <div>
+          <h3>Robot de navigation autonome</h3>
+          <p>Robot autonome multi-missions (Raspberry Pi, Python, OpenCV) avec suivi de ligne IR, suivi par caméra et évitement d'obstacles en temps réel. Détection de panneaux en temps réel par template matching et segmentation HSV pour l'enchaînement autonome des missions.</p>
+          <div class="stack">
+            <span class="chip">Raspberry Pi</span>
+            <span class="chip">Python</span>
+            <span class="chip">OpenCV</span>
+            <span class="chip">Picamera2</span>
+          </div>
+          <a class="pcard-link" href="https://github.com/sofdev44" target="_blank" rel="noopener">→ github.com/sofdev44</a>
+        </div>
+      </div>
+
+      <div class="pcard fade-up">
+        <div class="pcard-icon">▤</div>
+        <div class="pcard-meta">
+          Sept. 2025–Janv. 2026 — EFREI PARIS
+          <div class="pcard-status status-done">TERMINÉ</div>
+        </div>
+        <div>
+          <h3>Systèmes Embarqués &amp; Conception Numérique</h3>
+          <p>Conception de circuits logiques sur FPGA en VHDL, validée sous Xilinx Vivado. Modélisation de signaux et systèmes sous MATLAB/Simulink.</p>
+          <div class="stack">
+            <span class="chip">VHDL</span>
+            <span class="chip">Xilinx Vivado</span>
+            <span class="chip">MATLAB/Simulink</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div>
+        <div class="tag">Expérience</div>
+        <h2 class="section-title">Où j'ai travaillé</h2>
+      </div>
+    </div>
+
+    <div class="fade-up">
+      <div class="xp-item">
+        <div class="xp-date">Juil. – Août 2025</div>
+        <div>
+          <div class="xp-role">Stagiaire Ingénieur Mécanique</div>
+          <div class="xp-org">EDF — Centrale Nucléaire du Bugey, France</div>
+          <ul>
+            <li>Suivi et validation de modifications industrielles sous protocoles stricts de sûreté nucléaire (PP58, 25 modules)</li>
+            <li>Supervision de l'intégration et des tests d'un système de refroidissement par aspersion d'eau pour groupes électrogènes, en conformité ASN</li>
+            <li>Participation aux réunions de pilotage de projet et à la documentation technique</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <div>
+        <div class="tag">Compétences</div>
+        <h2 class="section-title">Boîte à outils</h2>
+      </div>
+    </div>
+    <div class="skills-grid fade-up">
+      <div class="skill-group">
+        <span class="tag">Programmation</span>
+        <ul>
+          <li>C</li>
+          <li>Python</li>
+          <li>MATLAB</li>
+          <li>VHDL</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="tag">CAO &amp; Conception</span>
+        <ul>
+          <li>CATIA V5</li>
+          <li>SolidWorks</li>
+          <li>PSpice</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="tag">Outils</span>
+        <ul>
+          <li>Linux / Bash</li>
+          <li>GitHub</li>
+          <li>VS Code</li>
+          <li>ROS2 (apprentissage)</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <span class="tag">Fondamentaux</span>
+        <ul>
+          <li>Mécanique des structures</li>
+          <li>Thermodynamique</li>
+          <li>Aéronautique</li>
+          <li>Électronique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-panel fade-up">
+      <h2>À la recherche d'un stage technique,<br>novembre 2026.</h2>
+      <p>Systèmes embarqués, robotique ou automatisation — ouvert aux opportunités en France et au Canada.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:sofiane.shahin@hotmail.com">M'écrire</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/sofiane-s-06388827a" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/sofdev44" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>SOFIANE SHAHIN — PARIS, FRANCE</span>
+      <span>+33 7 83 22 79 40</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.fade-up');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.1});
+  items.forEach(i => io.observe(i));
+</script>
+
+</body>
+</html>
